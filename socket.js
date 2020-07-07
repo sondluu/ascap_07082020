@@ -23,7 +23,7 @@ function newConnection(socket){
     socket.on('detected', dataMsg); //socket.on listens to "detected" from client
 
     function dataMsg(data){
-        io.emit('receiveddetected', data);
+        socket.broadcast.emit('receiveddetected', data);
         console.log(data);
     }
 }
