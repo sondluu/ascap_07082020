@@ -20,7 +20,7 @@ io.on('connection', newConnection);
 function newConnection(socket){
     console.log('new connection: ' + socket.id);
 //    socket.on('person', personMsg);
-    socket.on('detected', dataMsg);
+    socket.on('detected', dataMsg); //socket.on listens to "detected" from client
 
     function dataMsg(data){
         socket.broadcast.emit('detected', data);
