@@ -104,6 +104,7 @@ function newDrawing(data){
   stroke(255,0,0);
   fill(200,0,100);
   ellipse(300,300,80,80);
+  console.log(data.x, data,y, "from other user")
   if(data.label == 'person'){
     image(kitty, 800-data.x*4, data.y*4, data.w, data.h);
     console.log("kitty is there!");
@@ -161,6 +162,9 @@ function showCam(){
 camState=!camState;
 }
 
+// socket.on('receiveddetected', (data)=>{
+//   console.log(data, :)
+// })
 
 function draw() {
 //  if(time%10==0){
