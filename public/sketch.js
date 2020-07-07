@@ -158,7 +158,7 @@ function draw() {
   stroke(255,0,0);
   fill(200,0,100);
   ellipse(400,400,40,40);
-  socket.on('detected', newDrawing);
+  socket.on('receiveddetected', newDrawing);
 //  }
 noStroke();
   fill(255)
@@ -205,7 +205,7 @@ noStroke();
        w: detection.width,
        h: detection.height
       }
-      socket.emit('detected', data);       
+      socket.emit('detected', data);       //socket.emit sends "detected" with data to server
       if (detection.label == 'person') {
         personstate = 1;
         personlocalstate += 1;
