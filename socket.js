@@ -15,6 +15,18 @@ http.listen(port,() => {
 //     res.sendFile(__dirname + '/public/index.html');
 // });
 
+io.on('connect', socket => {
+  // either with send()
+  socket.send('Hello!');
+   socket.on('newconnection', () => {
+     io.emit('newplayer', "there's a new one");
+    console.log();
+  });
+});
+
+
+
+
 io.on('connection', newConnection);
 
 function newConnection(socket){

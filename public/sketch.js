@@ -76,6 +76,15 @@ function setup() {
  socket = io.connect('https://spiky-quilted-country.glitch.me/');
 // socket.on('detected', newDrawing);
   
+  socket.on('connect', () => {
+
+  // or with emit() and custom event names
+  socket.emit('newconnection', 'Hello!');
+});
+  
+  socket.on('newplayer', (message)=>{
+    console.log(message)
+  })  
 }
 
 function loaded(){
