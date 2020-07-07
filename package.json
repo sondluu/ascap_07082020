@@ -1,0 +1,32 @@
+{
+  "name": "websockett",
+  "version": "1.0.0",
+  "description": "checking",
+  "main": "socket.js",
+  "scripts": {
+    "start": "node socket.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sachiko-Nakajima/websocket2.git"
+  },
+  "keywords": [
+    "websocket",
+    "machine",
+    "learning",
+    "object",
+    "detection",
+    "testing"
+  ],
+  "author": "Sachiko Nakajima",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sachiko-Nakajima/websocket2/issues"
+  },
+  "homepage": "https://github.com/Sachiko-Nakajima/websocket2#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "socket.io": "^2.3.0"
+  }
+}
