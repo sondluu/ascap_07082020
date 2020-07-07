@@ -103,10 +103,12 @@ function appstart(){
 function newDrawing(data){
   stroke(255,0,0);
   fill(200,0,100);
-  ellipse(300,300,80,80);
-  console.log(data.x, data,y, "from other user")
+  // ellipse(300,300,80,80);
+  console.log(data.x, data.y, "from other user")
   if(data.label == 'person'){
     image(kitty, 800-data.x*4, data.y*4, data.w, data.h);
+    fill(255,0,0)
+    rect(width/2, height/2, 100,100)
     console.log("kitty is there!");
   }
   // if(data.label == 'cell phone'){
@@ -168,7 +170,7 @@ camState=!camState;
 
 function draw() {
 //  if(time%10==0){
-  background(240,210,210);
+  // background(240,210,210);
   stroke(255,0,0);
   fill(200,0,100);
   ellipse(400,400,40,40);
