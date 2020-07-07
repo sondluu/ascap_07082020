@@ -73,8 +73,9 @@ function setup() {
   
 
  // objects[id] = new ObjectDetected(id, x, y, state, localstate, ontime, offtime);
- socket = io.connect('https://cocreativetest2.herokuapp.com/');
+ socket = io.connect('https://spiky-quilted-country.glitch.me/');
 // socket.on('detected', newDrawing);
+  
 }
 
 function loaded(){
