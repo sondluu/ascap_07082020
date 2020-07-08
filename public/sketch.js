@@ -105,12 +105,12 @@ function newDrawing(x,y,label,width){
   fill(200,0,100);
   console.log(x,y)
   // ellipse(0,0,800,80);
-  let otherPosX = round(x)
-  let otherPosY = round(y)
+  x = round(x)
+  y = round(y)
   // console.log(round(data.x), round(data.y), "from other user")
-  ellipse(otherPosX, otherPosY, 20,20)
+  ellipse(x, y, 20,20)
   if(label == 'person'){
-    image(kitty, 800-otherPosX*4, otherPosY*4, width, width);
+    image(kitty, 800-x*4, y*4, width, width);
     fill(255,0,0)
     console.log("kitty is there!! from new drawng");
   }
@@ -268,6 +268,7 @@ noStroke();
 //       }   
     })
   }
+    
           socket.on('receiveddetected', (msg)=>{
             tempx= msg.x
             tempy=msg.y
@@ -278,6 +279,9 @@ noStroke();
             tempw=msg.w
             temph=msg.h
             
+            objects.push(msg)
+            
+            
             console.log(msg.x, msg.y, "sent from someone")
             // console.log(tempx, tempy, "this prints")
             fill(244)
@@ -287,6 +291,7 @@ noStroke();
           });
 
     // console.log("this is new tempx", tempx)
+
     newDrawing(tempx, tempy,templabel,tempw)
 
       // socket.on('receiveddetected', newDrawing);
