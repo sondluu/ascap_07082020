@@ -357,17 +357,15 @@ noStroke();
             fill(244)
             stroke(3)
             strokeWeight(4)
-                  // newDrawing(tempx, tempy,templabel,tempw)
-
+                  // newDrawing(msg.x*4, msg.y*4, 50,50)
+            
 
           });
     // drawACircle(200,200)
     // console.log("this is new tempx", tempx)
-
-    newDrawing(tempx, tempy,templabel,tempw)
+    
+    // newDrawing(tempx, tempy,templabel,tempw)
 }
-
-l
 
 function drawACircle(x,y){
   stroke(255)
