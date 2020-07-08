@@ -100,7 +100,7 @@ function appstart(){
 }
 
 
-function newDrawing(x,y){
+function newDrawing(x,y,label,width){
   stroke(255,0,0);
   fill(200,0,100);
   
@@ -108,12 +108,12 @@ function newDrawing(x,y){
   let otherPosX = round(x)
   let otherPosY = round(y)
   // console.log(round(data.x), round(data.y), "from other user")
-  ellipse(otherPosX, otherPosY, 200,200)
-  // if(data.label == 'person'){
-    image(kitty, 800-x*4, y*4, 200, 200);
+  ellipse(otherPosX, otherPosY, width,width)
+  if(label == 'person'){
+    image(kitty, 800-x*4, y*4, width, width);
     fill(255,0,0)
     console.log("kitty is there!! from new drawng");
-  // }
+  }
   // if(data.label == 'cell phone'){
   //     image(phone, 800-data.x*4, data.y*4, data.w, data.h);
   //       phonesound.setVolume(1);
@@ -167,9 +167,11 @@ function showCam(){
 camState=!camState;
 }
 
-var tempx=400
-var tempy=400
-var tempw
+var tempx=400;
+var tempy=400;
+var tempw = 100;
+
+
 
 function draw() {
 //  if(time%10==0){
@@ -271,16 +273,15 @@ noStroke();
             tempw=msg.w
             temph=msg.h
             // console.log(msg, "sent from someone")
-            console.log(msg.x, msg.y, "this prints")
+            console.log(tempx, tempy, "this prints")
             fill(244)
             stroke(3)
             strokeWeight(4)
-            ellipse(tempx, tempy, 100,100)
               
           });
 
     // console.log("this is new tempx", tempx)
-    // newDrawing(tempx, tempy)
+    newDrawing(tempx, tempy,templabel,tempw)
 
       // socket.on('receiveddetected', newDrawing);
 
