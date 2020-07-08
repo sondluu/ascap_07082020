@@ -119,11 +119,11 @@ function newDrawing(x,y,label,width){
     fill(255,0,0)
     console.log("kitty is there!! from new drawng");
   }
-  // if(data.label == 'cell phone'){
-  //     image(phone, 800-data.x*4, data.y*4, data.w, data.h);
-  //       phonesound.setVolume(1);
-  //       phonereceivenum++;
-  //   }
+  if(label == 'cell phone'){
+      image(phone, 500-x*4, y*4, width,width);
+        phonesound.setVolume(1);
+        phonereceivenum++;
+    }
   // if(data.label == 'teddy bear'){
   //     image(bear, 800-data.x*4, data.y*4, data.w, data.h);
   //     bearsound.setVolume(1);
@@ -367,8 +367,13 @@ noStroke();
     newDrawing(tempx, tempy,templabel,tempw)
 }
 
+l
+
 function drawACircle(x,y){
   stroke(255)
   fill(0)
   ellipse(round(x), round(y), 30,30)
 }
+
+
+
