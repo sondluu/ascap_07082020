@@ -109,8 +109,13 @@ function newDrawing(x,y,label,width){
   y = round(y)
   // console.log(round(data.x), round(data.y), "from other user")
   ellipse(x, y, 20,20)
+    text(x, x, y+20)
+
   if(label == 'person'){
-    image(kitty, 800-x*4, y*4, width, width);
+    image(kitty, 500-x*4, y*4, width, width);
+    noStroke()
+    text(500-x*4,500-x*4, y*4 +20 )
+    text(x,500-x*4, y*4 +40 )
     fill(255,0,0)
     console.log("kitty is there!! from new drawng");
   }
@@ -227,8 +232,8 @@ noStroke();
        r: colorr,
        g: colorg,
        b: colorb,
-       x: map(detection.x, 20, 120, 0, 800),
-       y: map(detection.y,0,100,0,800),
+       x: detection.x,
+       y: detection.y,
        w: detection.width,
        h: detection.height
       }
@@ -352,14 +357,14 @@ noStroke();
             fill(244)
             stroke(3)
             strokeWeight(4)
-                  newDrawing(tempx, tempy,templabel,tempw)
+                  // newDrawing(tempx, tempy,templabel,tempw)
 
 
           });
     // drawACircle(200,200)
     // console.log("this is new tempx", tempx)
 
-    // newDrawing(tempx, tempy,templabel,tempw)
+    newDrawing(tempx, tempy,templabel,tempw)
 }
 
 function drawACircle(x,y){
