@@ -169,7 +169,7 @@ camState=!camState;
 
 var tempx=400
 var tempy=400
-
+var tempw
 
 function draw() {
 //  if(time%10==0){
@@ -265,13 +265,16 @@ noStroke();
             tempx= msg.x
             tempy=msg.y
             
-            console.log(msg.x, tempy, "temp this prints")
-            // console.log(msg.x, msg.y, "this prints")
-
+            // console.log(msg.x, msg., "this prints")
+            fill(244)
+            stroke(3)
+            strokeWeight(4)
+            ellipse(msg.x, msg.y, 100,100)
+              
 
           });
 
-    console.log("this is new tempx", tempx)
+    // console.log("this is new tempx", tempx)
     newDrawing(tempx, tempy)
 
       // socket.on('receiveddetected', newDrawing);
