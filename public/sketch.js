@@ -258,12 +258,20 @@ noStroke();
 //       }   
     })
   }
-    
+      let tempx=width/2;
+      let tempy=width/2;
           socket.on('receiveddetected', (msg)=>{
-            console.log(msg.x, msg.y)
+            tempx= msg.x
+            tempy=msg.y
+            
+            console.log(msg.x, tempy, "temp this prints")
+            // console.log(msg.x, msg.y, "this prints")
+
+
           });
-    
-    drawACricle(74,23)
+
+    console.log("this is new tempx", tempx)
+    drawACircle(tempx, tempy)
 
       // socket.on('receiveddetected', newDrawing);
 
