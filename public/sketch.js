@@ -103,7 +103,7 @@ function appstart(){
 function newDrawing(x,y,label,width){
   stroke(255,0,0);
   fill(200,0,100);
-  
+  console.log(x,y)
   // ellipse(0,0,800,80);
   let otherPosX = round(x)
   let otherPosY = round(y)
@@ -213,7 +213,7 @@ noStroke();
       stroke(0);
       strokeWeight(1);
       textSize(18);
-      text(detection.label, 800-detection.x*4 + 10, detection.y*4-10);
+      text(detection.y, 800-detection.x*4 + 10, detection.y*4-10);
       noFill();
       strokeWeight(3);
       stroke(colorr, colorb, colorg);
@@ -225,8 +225,8 @@ noStroke();
        r: colorr,
        g: colorg,
        b: colorb,
-       x: detection.x,
-       y: detection.y,
+       x: map(detection.x, 20, 120, 0, 800),
+       y: map(detection.y,0,100,0,800),
        w: detection.width,
        h: detection.height
       }
@@ -277,7 +277,8 @@ noStroke();
             tempb=msg.b            
             tempw=msg.w
             temph=msg.h
-            // console.log(msg, "sent from someone")
+            
+            console.log(msg.x, msg.y, "sent from someone")
             // console.log(tempx, tempy, "this prints")
             fill(244)
             stroke(3)
