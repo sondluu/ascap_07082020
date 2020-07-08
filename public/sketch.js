@@ -213,11 +213,13 @@ noStroke();
       stroke(0);
       strokeWeight(1);
       textSize(18);
-      text(detection.y, 800-detection.x*4 + 10, detection.y*4-10);
+      text(detection.label, 500-detection.x*4 + 10, detection.y*4-10);
+      text(detection.x, 500-detection.x*4 + 10, detection.y*4-30);
+
       noFill();
       strokeWeight(3);
       stroke(colorr, colorb, colorg);
-      rect(800-detection.x*4, detection.y*4, detection.width, detection.height);
+      rect(500-detection.x*4, detection.y*4, detection.width, detection.height);
 
       //console.log('Sending:' + detection.x + ',' + detection.y+ ',' + detection.width+ ',' + detection.height);
       var data = {
@@ -234,7 +236,7 @@ noStroke();
       if (detection.label == 'person') {
         personstate = 1;
         personlocalstate += 1;
-        image(kitty, 800-detection.x*4, detection.y*4, detection.width, detection.height); 
+        image(kitty, 500-detection.x*4, detection.y*4, detection.width, detection.height); 
         persontime1++;
         persontime2 = 0;
       }
@@ -350,8 +352,8 @@ noStroke();
             fill(244)
             stroke(3)
             strokeWeight(4)
-                  // newDrawing(tempx, tempy,templabel,tempw)
-    drawACircle(200, msg.y)
+                  newDrawing(tempx, tempy,templabel,tempw)
+
 
           });
     // drawACircle(200,200)
