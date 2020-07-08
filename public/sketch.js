@@ -108,9 +108,9 @@ function newDrawing(x,y,label,width){
   let otherPosX = round(x)
   let otherPosY = round(y)
   // console.log(round(data.x), round(data.y), "from other user")
-  ellipse(otherPosX, otherPosY, width,width)
+  ellipse(otherPosX, otherPosY, 20,20)
   if(label == 'person'){
-    image(kitty, 800-x*4, y*4, width, width);
+    image(kitty, 800-otherPosX*4, otherPosY*4, width, width);
     fill(255,0,0)
     console.log("kitty is there!! from new drawng");
   }
@@ -170,7 +170,12 @@ camState=!camState;
 var tempx=400;
 var tempy=400;
 var tempw = 100;
-
+var templabel=""
+var tempr=0;
+var tempg=0;
+var tempb=0;
+var tempw=0;
+var temph=0;
 
 
 function draw() {
@@ -273,7 +278,7 @@ noStroke();
             tempw=msg.w
             temph=msg.h
             // console.log(msg, "sent from someone")
-            console.log(tempx, tempy, "this prints")
+            // console.log(tempx, tempy, "this prints")
             fill(244)
             stroke(3)
             strokeWeight(4)
