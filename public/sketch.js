@@ -100,20 +100,20 @@ function appstart(){
 }
 
 
-function newDrawing(data){
+function newDrawing(x,y){
   stroke(255,0,0);
   fill(200,0,100);
   
   // ellipse(0,0,800,80);
-  let otherPosX = round(data.x)
-  let otherPosY = round(data.y)
-  console.log(round(data.x), round(data.y), "from other user")
+  let otherPosX = round(x)
+  let otherPosY = round(y)
+  // console.log(round(data.x), round(data.y), "from other user")
   ellipse(otherPosX, otherPosY, 200,200)
-  if(data.label == 'person'){
-    image(kitty, 800-data.x*4, data.y*4, data.w, data.h);
+  // if(data.label == 'person'){
+    image(kitty, 800-x*4, y*4, 200, 200);
     fill(255,0,0)
     console.log("kitty is there!! from new drawng");
-  }
+  // }
   // if(data.label == 'cell phone'){
   //     image(phone, 800-data.x*4, data.y*4, data.w, data.h);
   //       phonesound.setVolume(1);
@@ -166,6 +166,9 @@ function gotResults(err, results) {
 function showCam(){
 camState=!camState;
 }
+
+var tempx=400
+var tempy=400
 
 
 function draw() {
@@ -258,8 +261,6 @@ noStroke();
 //       }   
     })
   }
-      let tempx=width/2;
-      let tempy=width/2;
           socket.on('receiveddetected', (msg)=>{
             tempx= msg.x
             tempy=msg.y
@@ -271,7 +272,7 @@ noStroke();
           });
 
     console.log("this is new tempx", tempx)
-    drawACircle(tempx, tempy)
+    newDrawing(tempx, tempy)
 
       // socket.on('receiveddetected', newDrawing);
 
