@@ -351,9 +351,11 @@ noStroke();
             
             objects.push(msg)
             
+            console.log(msg, msg.x)
             
-            console.log(msg.x, msg.y, "sent from someone")
-            // console.log(tempx, tempy, "this prints")
+            fill(200)
+            text(msg.label, 600,600)
+            // console.log(msg.x, msg.y, "sent from someone")
             fill(244)
             stroke(3)
             strokeWeight(4)
