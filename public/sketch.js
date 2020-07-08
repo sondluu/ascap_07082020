@@ -269,30 +269,7 @@ noStroke();
     })
   }
     
-          socket.on('receiveddetected', (msg)=>{
-            tempx= msg.x
-            tempy=msg.y
-            templabel=msg.label
-            tempr=msg.r
-            tempg=msg.g
-            tempb=msg.b            
-            tempw=msg.w
-            temph=msg.h
-            
-            objects.push(msg)
-            
-            
-            console.log(msg.x, msg.y, "sent from someone")
-            // console.log(tempx, tempy, "this prints")
-            fill(244)
-            stroke(3)
-            strokeWeight(4)
-              
-          });
-
-    // console.log("this is new tempx", tempx)
-
-    newDrawing(tempx, tempy,templabel,tempw)
+        
 
       // socket.on('receiveddetected', newDrawing);
 
@@ -355,10 +332,36 @@ noStroke();
 // phonelocalstate = 0;
 // bearlocalstate = 0;
 // cuplocalstate = 0;
+  socket.on('receiveddetected', (msg)=>{
+            tempx= msg.x
+            tempy=msg.y
+            templabel=msg.label
+            tempr=msg.r
+            tempg=msg.g
+            tempb=msg.b            
+            tempw=msg.w
+            temph=msg.h
+            
+            objects.push(msg)
+            
+            
+            console.log(msg.x, msg.y, "sent from someone")
+            // console.log(tempx, tempy, "this prints")
+            fill(244)
+            stroke(3)
+            strokeWeight(4)
+                  // newDrawing(tempx, tempy,templabel,tempw)
+    drawACircle(200, msg.y)
 
+          });
+    // drawACircle(200,200)
+    // console.log("this is new tempx", tempx)
+
+    // newDrawing(tempx, tempy,templabel,tempw)
 }
 
 function drawACircle(x,y){
+  stroke(255)
   fill(0)
   ellipse(round(x), round(y), 30,30)
 }
