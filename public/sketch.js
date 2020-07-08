@@ -264,18 +264,23 @@ noStroke();
           socket.on('receiveddetected', (msg)=>{
             tempx= msg.x
             tempy=msg.y
-            
-            // console.log(msg.x, msg., "this prints")
+            templabel=msg.label
+            tempr=msg.r
+            tempg=msg.g
+            tempb=msg.b            
+            tempw=msg.w
+            temph=msg.h
+            // console.log(msg, "sent from someone")
+            console.log(msg.x, msg.y, "this prints")
             fill(244)
             stroke(3)
             strokeWeight(4)
-            ellipse(msg.x, msg.y, 100,100)
+            ellipse(tempx, tempy, 100,100)
               
-
           });
 
     // console.log("this is new tempx", tempx)
-    newDrawing(tempx, tempy)
+    // newDrawing(tempx, tempy)
 
       // socket.on('receiveddetected', newDrawing);
 
