@@ -167,12 +167,6 @@ function showCam(){
 camState=!camState;
 }
 
-// socket.on('receiveddetected', (data)=>{
-//   console.log(data, :)
-// })\
-    socket.on('receiveddetected', (data)=>{
-      console.log(data, "from receiveddat")
-    });
 
 function draw() {
 //  if(time%10==0){
@@ -264,7 +258,14 @@ noStroke();
 //       }   
     })
   }
-  
+    
+          socket.on('receiveddetected', (msg)=>{
+            console.log(msg.x, msg.y)
+          });
+    
+    drawACricle(74,23)
+
+      // socket.on('receiveddetected', newDrawing);
 
 }
 
@@ -325,7 +326,7 @@ noStroke();
 // phonelocalstate = 0;
 // bearlocalstate = 0;
 // cuplocalstate = 0;
-  socket.on("receivddata", newDrawing)
+
 }
 
 function drawACircle(x,y){
