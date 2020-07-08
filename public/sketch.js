@@ -349,11 +349,10 @@ noStroke();
             tempw=msg.w
             temph=msg.h
             
-            objects.push(msg)
             
             console.log(msg, msg.x)
             
-            fill(200)
+            fill()
             text(msg.label, 600,600)
             // console.log(msg.x, msg.y, "sent from someone")
             fill(244)
@@ -367,6 +366,7 @@ noStroke();
     // console.log("this is new tempx", tempx)
     
     // newDrawing(tempx, tempy,templabel,tempw)
+  for(int i = 0; i< player1)
 }
 
 function drawACircle(x,y){
@@ -377,3 +377,11 @@ function drawACircle(x,y){
 
 
 
+let player1=[
+  {
+    "label": "person",
+    "x":0
+    "y": 0
+    "id":0
+  }
+]
