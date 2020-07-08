@@ -103,14 +103,15 @@ function appstart(){
 function newDrawing(data){
   stroke(255,0,0);
   fill(200,0,100);
-  // ellipse(300,300,80,80);
-  console.log(data.x, data.y, "from other user")
-  
+  // ellipse(0,0,800,80);
+  let otherPosX = round(data.x)
+  let otherPosY = round(data.y)
+  console.log(round(data.x), round(data.y), "from other user")
+  ellipse(otherPosX, otherPosY, 200,200)
   if(data.label == 'person'){
     image(kitty, 800-data.x*4, data.y*4, data.w, data.h);
     fill(255,0,0)
-    background(255,0,0)
-    rect(width/2, height/2, 100,100)
+    drawACircle(300, 200)
     console.log("kitty is there!! from new drawng");
   }
   // if(data.label == 'cell phone'){
@@ -176,7 +177,6 @@ function draw() {
   stroke(255,0,0);
   fill(200,0,100);
   ellipse(400,400,40,40);
-  socket.on('receiveddetected', newDrawing);
 //  }
 noStroke();
   fill(255)
@@ -231,6 +231,7 @@ noStroke();
         persontime1++;
         persontime2 = 0;
       }
+      
 //       if (detection.label === 'cell phone') {
 //         phonesound.setVolume(1);
 //         console.log("phonesound is" + phonesound.isPlaying);
@@ -260,6 +261,8 @@ noStroke();
 //       }   
     })
   }
+      socket.on('receiveddetected', newDrawing);
+
 }
 
 //       if(phonelocalstate == 0){
@@ -320,4 +323,9 @@ noStroke();
 // bearlocalstate = 0;
 // cuplocalstate = 0;
 
+}
+
+function drawACircle(x,y){
+  fill(0)
+  ellipse(round(x), round(y), 30,30)
 }
